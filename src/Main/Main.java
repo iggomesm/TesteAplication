@@ -1,12 +1,8 @@
 package Main;
 
-import java.sql.Connection;
 import java.util.List;
 
-import br.com.agenda.geral.enums.EnumDAO;
-import br.com.agenda.geral.enums.EnumOperacaoBD;
 import br.com.agenda.geral.tabelas.Pessoa;
-import br.com.agenda.integracao.FabricaDAO;
 import br.com.agenda.integracao.IntegracaoDAO;
 import br.com.agenda.integracao.PessoaDAO;
 import br.com.agenda.utilitarios.Dia;
@@ -32,7 +28,9 @@ public class Main {
 //			
 //			System.out.println("SALVOU NO BANCO");
 			
-			PessoaDAO pessoaDAO = (PessoaDAO) FabricaDAO.getInstaceDAO(EnumDAO.PESSOA_DAO);
+			//PessoaDAO pessoaDAO = (PessoaDAO) FabricaDAO.getInstaceDAO(EnumDAO.PESSOA_DAO);
+			
+			PessoaDAO pessoaDAO = new PessoaDAO();
 			
 			List<Pessoa> lista = pessoaDAO.pesquisaPessoa(pessoa, null);			
 			
